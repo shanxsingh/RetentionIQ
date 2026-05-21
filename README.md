@@ -1,6 +1,6 @@
 # RetentionIQ
 
-Advanced data science project for customer churn risk, uplift targeting, and model monitoring.
+Customer churn risk, uplift targeting, and model monitoring.
 
 This repo is built to show recruiters that you can take a business problem from raw operational data to a practical decision system. It uses a synthetic B2B SaaS retention scenario so the project is safe to publish, easy to run, and realistic enough to discuss in interviews.
 
