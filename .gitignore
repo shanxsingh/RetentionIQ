@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+build/
+dist/
+*.egg-info/
+
+# Generated project outputs
+data/raw/*.csv
+data/processed/*.csv
+artifacts/*
+reports/*
+!artifacts/.gitkeep
+!artifacts/metrics.json
+!artifacts/model_card.md
+!artifacts/feature_importance.csv
+!artifacts/drift_report.csv
+!artifacts/segment_performance.csv
+!reports/.gitkeep
+!reports/dashboard.html

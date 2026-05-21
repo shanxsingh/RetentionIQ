@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RetentionIQ Model Report</title>
+  <style>
+    :root {
+      --ink: #172026;
+      --muted: #64717d;
+      --paper: #fbfcfb;
+      --line: #d9e1df;
+      --accent: #167c80;
+      --accent-2: #b1482f;
+      --soft: #eef5f3;
+      --gold: #b68121;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    header {
+      padding: 36px clamp(20px, 5vw, 64px) 26px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, #f4faf8 100%);
+    }
+    main { padding: 28px clamp(20px, 5vw, 64px) 56px; }
+    h1 { margin: 0 0 8px; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; }
+    h2 { margin: 0 0 14px; font-size: 22px; }
+    p { margin: 0; color: var(--muted); max-width: 920px; line-height: 1.55; }
+    .grid { display: grid; gap: 16px; }
+    .cards { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin-top: 22px; }
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 112px;
+    }
+    .label { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    .metric { font-size: 32px; font-weight: 760; margin-top: 8px; }
+    .sub { color: var(--muted); margin-top: 6px; font-size: 14px; }
+    section { margin-top: 30px; }
+    .two-col { grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr); align-items: start; }
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      overflow-x: auto;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(190px, 260px) 1fr 72px;
+      gap: 12px;
+      align-items: center;
+      min-height: 30px;
+      font-size: 14px;
+    }
+    .bar-track { background: var(--soft); border-radius: 999px; height: 10px; overflow: hidden; }
+    .bar { height: 10px; background: var(--accent); border-radius: 999px; }
+    svg { width: 100%; max-height: 320px; }
+    svg line, svg polyline { fill: none; stroke-width: 2; }
+    .diag { stroke: #b9c8c4; stroke-dasharray: 5 5; }
+    .cal-line { stroke: var(--accent-2); }
+    svg circle { fill: var(--accent-2); }
+    svg text { fill: var(--muted); font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 10px 8px; text-align: left; white-space: nowrap; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    .badge { display: inline-block; border-radius: 999px; padding: 3px 9px; background: var(--soft); color: var(--accent); font-weight: 700; }
+    .note { margin-top: 10px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 880px) {
+      .two-col { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="badge">RetentionIQ</span>
+    <h1>Churn Risk, Uplift Targeting, and Drift Monitoring</h1>
+    <p>An end-to-end data science project for a B2B SaaS retention team: generate realistic operational data, build leakage-safe customer features, train a calibrated churn model, identify customers worth targeting, and monitor population shift.</p>
+    <div class="grid cards">
+      <div class="card"><div class="label">ROC AUC</div><div class="metric">0.805</div><div class="sub">Baseline: 0.747</div></div>
+      <div class="card"><div class="label">PR AUC</div><div class="metric">0.211</div><div class="sub">Churn prevalence-aware ranking</div></div>
+      <div class="card"><div class="label">Lift @ 10%</div><div class="metric">3.265x</div><div class="sub">Top decile vs average customer</div></div>
+      <div class="card"><div class="label">Best Policy Profit</div><div class="metric">$116,936</div><div class="sub">620 customers selected</div></div>
+      <div class="card"><div class="label">Uplift Net Value</div><div class="metric">$628,637</div><div class="sub">Top 20% by offer uplift</div></div>
+    </div>
+  </header>
+  <main>
+    <section class="grid two-col">
+      <div class="panel">
+        <h2>Top Model Drivers</h2>
+        
+            <div class="bar-row">
+              <span>active_rate_change_3m</span>
+              <div class="bar-track"><div class="bar" style="width:100.0%"></div></div>
+              <strong>0.0176</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>invoice_overdue_recent_3m</span>
+              <div class="bar-track"><div class="bar" style="width:89.8%"></div></div>
+              <strong>0.0158</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>active_rate_recent_3m</span>
+              <div class="bar-track"><div class="bar" style="width:55.5%"></div></div>
+              <strong>0.0098</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>active_rate_slope</span>
+              <div class="bar-track"><div class="bar" style="width:45.8%"></div></div>
+              <strong>0.0080</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>severe_ticket_share_6m</span>
+              <div class="bar-track"><div class="bar" style="width:35.5%"></div></div>
+              <strong>0.0062</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>nps_change_3m</span>
+              <div class="bar-track"><div class="bar" style="width:34.8%"></div></div>
+              <strong>0.0061</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>near_renewal</span>
+              <div class="bar-track"><div class="bar" style="width:32.5%"></div></div>
+              <strong>0.0057</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>nps_recent_3m</span>
+              <div class="bar-track"><div class="bar" style="width:22.0%"></div></div>
+              <strong>0.0039</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>severe_tickets_6m</span>
+              <div class="bar-track"><div class="bar" style="width:21.8%"></div></div>
+              <strong>0.0038</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>nps_slope</span>
+              <div class="bar-track"><div class="bar" style="width:20.9%"></div></div>
+              <strong>0.0037</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>logins_per_active_user_prior_3m</span>
+              <div class="bar-track"><div class="bar" style="width:18.9%"></div></div>
+              <strong>0.0033</strong>
+            </div>
+            
+
+            <div class="bar-row">
+              <span>support_tickets_per_seat_prior_3m</span>
+              <div class="bar-track"><div class="bar" style="width:14.6%"></div></div>
+              <strong>0.0026</strong>
+            </div>
+            
+        <div class="note">Permutation importance is measured as the holdout ROC AUC drop after shuffling each feature.</div>
+      </div>
+      <div class="panel">
+        <h2>Calibration</h2>
+        
+    <svg viewBox="0 0 320 320" role="img" aria-label="Calibration chart">
+      <line x1="42" y1="278" x2="278" y2="42" class="diag" />
+      <polyline points="42.9,278.0 44.0,276.8 45.3,275.6 47.0,274.5 50.1,269.7 54.8,262.7 61.3,256.8 69.1,255.6 79.6,235.5 102.3,221.4" class="cal-line" />
+      <circle cx="42.9" cy="278.0" r="4" />
+<circle cx="44.0" cy="276.8" r="4" />
+<circle cx="45.3" cy="275.6" r="4" />
+<circle cx="47.0" cy="274.5" r="4" />
+<circle cx="50.1" cy="269.7" r="4" />
+<circle cx="54.8" cy="262.7" r="4" />
+<circle cx="61.3" cy="256.8" r="4" />
+<circle cx="69.1" cy="255.6" r="4" />
+<circle cx="79.6" cy="235.5" r="4" />
+<circle cx="102.3" cy="221.4" r="4" />
+      <text x="42" y="302">0</text><text x="266" y="302">1.0</text>
+      <text x="8" y="282">0</text><text x="8" y="48">1.0</text>
+      <text x="105" y="314">Predicted risk</text>
+      <text x="-210" y="18" transform="rotate(-90)">Observed churn</text>
+    </svg>
+    
+        <div class="note">ECE: 0.0094. The dashed line is perfect calibration.</div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Recommended Retention Queue</h2>
+      <table><thead><tr><th>Customer Id</th><th>Segment Label</th><th>Plan Label</th><th>Mrr</th><th>Predicted Churn Risk</th><th>Predicted Offer Uplift</th><th>Expected Value At Risk</th><th>Recommended Action</th></tr></thead><tbody><tr><td>CUST-002037</td><td>Enterprise</td><td>Scale</td><td>$25,404</td><td>0.246</td><td>0.245</td><td>$18,737</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-002707</td><td>Enterprise</td><td>Scale</td><td>$32,156</td><td>0.156</td><td>0.223</td><td>$15,041</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-004407</td><td>Enterprise</td><td>Scale</td><td>$23,731</td><td>0.188</td><td>0.363</td><td>$13,417</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-007299</td><td>Enterprise</td><td>Scale</td><td>$28,345</td><td>0.155</td><td>0.316</td><td>$13,162</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-007078</td><td>Enterprise</td><td>Scale</td><td>$27,880</td><td>0.150</td><td>0.303</td><td>$12,562</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-001135</td><td>Enterprise</td><td>Scale</td><td>$25,211</td><td>0.178</td><td>0.103</td><td>$13,485</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-005516</td><td>Enterprise</td><td>Scale</td><td>$22,577</td><td>0.182</td><td>0.134</td><td>$12,309</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-006822</td><td>Enterprise</td><td>Scale</td><td>$27,417</td><td>0.113</td><td>0.542</td><td>$9,288</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-005749</td><td>Enterprise</td><td>Scale</td><td>$27,721</td><td>0.115</td><td>0.453</td><td>$9,557</td><td>Offer + CSM outreach</td></tr><tr><td>CUST-007080</td><td>Enterprise</td><td>Scale</td><td>$23,406</td><td>0.219</td><td>-0.105</td><td>$15,392</td><td>CSM outreach</td></tr><tr><td>CUST-007126</td><td>Enterprise</td><td>Scale</td><td>$26,410</td><td>0.184</td><td>-0.056</td><td>$14,548</td><td>CSM outreach</td></tr><tr><td>CUST-005116</td><td>Enterprise</td><td>Scale</td><td>$27,217</td><td>0.175</td><td>-0.073</td><td>$14,320</td><td>CSM outreach</td></tr></tbody></table>
+    </section>
+    <section class="grid two-col">
+      <div class="panel">
+        <h2>Segment Performance</h2>
+        <table><thead><tr><th>Segment</th><th>Customers</th><th>Actual Churn Rate</th><th>Avg Predicted Risk</th><th>Avg Predicted Uplift</th><th>Value At Risk</th></tr></thead><tbody><tr><td>Enterprise</td><td>218</td><td>0.041</td><td>0.041</td><td>0.094</td><td>$616,408</td></tr><tr><td>Mid-Market</td><td>579</td><td>0.067</td><td>0.050</td><td>0.106</td><td>$404,513</td></tr><tr><td>SMB</td><td>1203</td><td>0.082</td><td>0.093</td><td>0.161</td><td>$258,298</td></tr></tbody></table>
+      </div>
+      <div class="panel">
+        <h2>Population Stability</h2>
+        <table><thead><tr><th>Feature</th><th>Psi</th><th>Status</th><th>Train Mean</th><th>Holdout Mean</th></tr></thead><tbody><tr><td>tenure_months</td><td>12.434</td><td>shifted</td><td>35.612</td><td>10.921</td></tr><tr><td>logins_per_active_user_slope</td><td>0.015</td><td>stable</td><td>-0.027</td><td>-0.049</td></tr><tr><td>feature_events_per_seat_prior_3m</td><td>0.013</td><td>stable</td><td>6.951</td><td>6.772</td></tr><tr><td>automation_runs_last</td><td>0.011</td><td>stable</td><td>150.906</td><td>140.535</td></tr><tr><td>feature_events_6m</td><td>0.011</td><td>stable</td><td>3850.664</td><td>3583.240</td></tr><tr><td>support_tickets_per_seat_last</td><td>0.010</td><td>stable</td><td>0.035</td><td>0.038</td></tr><tr><td>automation_runs_recent_3m</td><td>0.009</td><td>stable</td><td>144.768</td><td>135.908</td></tr><tr><td>support_tickets_per_seat_slope</td><td>0.009</td><td>stable</td><td>-0.000</td><td>0.000</td></tr></tbody></table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

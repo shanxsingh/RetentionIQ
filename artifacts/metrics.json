@@ -1,0 +1,202 @@
+{
+  "dataset": {
+    "customers": 8000,
+    "features": 76,
+    "train_rows": 6000,
+    "holdout_rows": 2000,
+    "holdout_churn_rate": 0.0735
+  },
+  "churn_model": {
+    "roc_auc": 0.8051771167182469,
+    "average_precision": 0.21053795909132653,
+    "brier_score": 0.062253260597700644,
+    "log_loss": 0.21998394722076117,
+    "expected_calibration_error": 0.009368285440758763,
+    "lift_at_10_pct": 3.2653061224489797,
+    "capture_at_10_pct": 0.32653061224489793,
+    "lift_at_20_pct": 2.857142857142857,
+    "capture_at_20_pct": 0.5714285714285714,
+    "optimized_threshold": {
+      "threshold": 0.095263,
+      "selected_customers": 620,
+      "selected_rate": 0.31,
+      "saved_revenue": 311735.4345,
+      "contact_cost": 194799.6936,
+      "profit": 116935.74089999998
+    },
+    "selected_threshold": 0.095263,
+    "calibration_bins": [
+      {
+        "count": 200,
+        "avg_prediction": 0.003856142208645233,
+        "observed_rate": 0.0,
+        "min_prediction": 0.0007814547753871504,
+        "max_prediction": 0.006240208179395635
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.008416815425854157,
+        "observed_rate": 0.005,
+        "min_prediction": 0.006255014013957462,
+        "max_prediction": 0.01088642465138587
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.014046893364244568,
+        "observed_rate": 0.01,
+        "min_prediction": 0.010918054832975792,
+        "max_prediction": 0.017440022033443477
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.021362926731736214,
+        "observed_rate": 0.015,
+        "min_prediction": 0.017441264450564382,
+        "max_prediction": 0.02663667383191474
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.0342767319203779,
+        "observed_rate": 0.035,
+        "min_prediction": 0.02664317319125763,
+        "max_prediction": 0.04273344440904326
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.054102285762458374,
+        "observed_rate": 0.065,
+        "min_prediction": 0.04290580155461449,
+        "max_prediction": 0.06677658839826728
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.08188014922365033,
+        "observed_rate": 0.09,
+        "min_prediction": 0.06690249699473638,
+        "max_prediction": 0.09878896675851373
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.1149695865892653,
+        "observed_rate": 0.095,
+        "min_prediction": 0.09879549499200736,
+        "max_prediction": 0.1350039069148346
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.15940028880233872,
+        "observed_rate": 0.18,
+        "min_prediction": 0.13517521230964724,
+        "max_prediction": 0.18976758790208775
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.2556899457966675,
+        "observed_rate": 0.24,
+        "min_prediction": 0.19072898632357427,
+        "max_prediction": 0.4391068836456182
+      }
+    ]
+  },
+  "heuristic_baseline": {
+    "roc_auc": 0.7467757745299954,
+    "average_precision": 0.16955016634186137,
+    "brier_score": 0.27603790105520465,
+    "log_loss": 0.7513435399981591,
+    "expected_calibration_error": 0.43338817076204855,
+    "lift_at_10_pct": 2.5170068027210886,
+    "capture_at_10_pct": 0.25170068027210885,
+    "lift_at_20_pct": 2.2789115646258504,
+    "capture_at_20_pct": 0.4557823129251701,
+    "optimized_threshold": {
+      "threshold": 0.76598,
+      "selected_customers": 160,
+      "selected_rate": 0.08,
+      "saved_revenue": 144401.57549999998,
+      "contact_cost": 92556.636,
+      "profit": 51844.93949999998
+    },
+    "selected_threshold": 0.76598,
+    "calibration_bins": [
+      {
+        "count": 200,
+        "avg_prediction": 0.13204967950449556,
+        "observed_rate": 0.005,
+        "min_prediction": 0.03413858469505472,
+        "max_prediction": 0.1852078031774007
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.23592758387889293,
+        "observed_rate": 0.0,
+        "min_prediction": 0.18652283058754454,
+        "max_prediction": 0.2778190391115906
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.32600950863361366,
+        "observed_rate": 0.02,
+        "min_prediction": 0.277831792375315,
+        "max_prediction": 0.3791966803656564
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.4381136508815574,
+        "observed_rate": 0.02,
+        "min_prediction": 0.38072702760088734,
+        "max_prediction": 0.4942574133150271
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.5384427575216502,
+        "observed_rate": 0.055,
+        "min_prediction": 0.49542336346249605,
+        "max_prediction": 0.5700998054843507
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.5889724413730798,
+        "observed_rate": 0.1,
+        "min_prediction": 0.5701793979316642,
+        "max_prediction": 0.6068714131967436
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.6244173642597521,
+        "observed_rate": 0.11,
+        "min_prediction": 0.6073572817603161,
+        "max_prediction": 0.6437564863027486
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.663026413811006,
+        "observed_rate": 0.09,
+        "min_prediction": 0.6439223269602922,
+        "max_prediction": 0.685451051072215
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.7120767542008736,
+        "observed_rate": 0.15,
+        "min_prediction": 0.6856245015364774,
+        "max_prediction": 0.7473930670986347
+      },
+      {
+        "count": 200,
+        "avg_prediction": 0.8098455535555646,
+        "observed_rate": 0.185,
+        "min_prediction": 0.7479994115896375,
+        "max_prediction": 0.9709598729270884
+      }
+    ]
+  },
+  "uplift_policy": {
+    "top_fraction": 0.2,
+    "selected_customers": 400,
+    "mean_predicted_uplift": 0.3166661683374763,
+    "observed_churn_rate_in_policy": 0.08,
+    "expected_saved_revenue": 1196845.7536256881,
+    "expected_offer_cost": 568208.637,
+    "expected_net_value": 628637.1166256882
+  }
+}
